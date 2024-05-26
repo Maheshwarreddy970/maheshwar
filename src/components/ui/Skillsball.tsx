@@ -1,4 +1,5 @@
 import IconCloud from "@/components/ui/icon-cloud";
+import { cn } from "@/lib/utils";
 
 const slugs = [
   "typescript",
@@ -33,10 +34,10 @@ const slugs = [
   "figma",
 ];
 
-export function Skillsball() {
+export function Skillsball({className}:{className?:string}) {
   return (
-    <>
+    <div className={cn(className)}>
       <IconCloud iconSlugs={slugs} />
-    </>
+    </div>
   );
 }

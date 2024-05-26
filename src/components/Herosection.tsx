@@ -2,9 +2,11 @@
 
 import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import Divider from "./ui/Divider";
 
 export const Herosection = () => {
   return (
+    <>
     <div className="relative flex h-96 w-full  items-center justify-center overflow-hidden  bg-background p-20">
       <AnimatedGridPattern
         numSquares={30}
@@ -16,7 +18,10 @@ export const Herosection = () => {
           "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
         )}
       />
+
     </div>
+    <Divider></Divider>
+    </>
   );
 };
 

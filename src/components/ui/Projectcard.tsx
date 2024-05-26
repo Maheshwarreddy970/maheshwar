@@ -5,7 +5,6 @@ import React, { useRef, useState } from 'react';
 import ShineButton from './LinkButton';
 import Link from 'next/link';
 import { LuCode2 } from 'react-icons/lu';
-import { IoEyeOutline } from 'react-icons/io5';
 import { FaRegEye } from 'react-icons/fa';
 
 
@@ -110,7 +109,7 @@ const Projectcard = ({ projectdetails,key }: {
                     </div>
                 </div>
                 <div>
-                    <Image src={image} alt='project' className=' w-full h-full rounded'></Image>
+                    <Image src={image} alt='project' className=' w-full h-full rounded-xl'></Image>
                 </div>
             </div>
         </div>
