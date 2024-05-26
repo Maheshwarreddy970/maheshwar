@@ -132,7 +132,7 @@ const features = [
 export function About() {
   return (
     <section className="">
-        <h4 className=" text-8xl ">about</h4>
+        <h4 className=" text-6xl font-bold">About</h4>
     <BentoGrid>
       {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />

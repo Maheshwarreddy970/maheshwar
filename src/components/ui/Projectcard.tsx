@@ -9,7 +9,7 @@ import { IoEyeOutline } from 'react-icons/io5';
 import { FaRegEye } from 'react-icons/fa';
 
 
-const Projectcard = ({ projectdetails }: {
+const Projectcard = ({ projectdetails,key }: {
     projectdetails: {
         title: string;
         discription: string;
@@ -18,7 +18,8 @@ const Projectcard = ({ projectdetails }: {
         preview: string;
         logo: StaticImageData;
         image: StaticImageData;
-    }
+    },
+    key:number
 }) => {
 
     const { title, discription, technology, sourcecode, preview, logo, image } = projectdetails
@@ -56,6 +57,7 @@ const Projectcard = ({ projectdetails }: {
 
     return (
         <div
+            key={key}
             ref={divRef}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
