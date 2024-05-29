@@ -64,7 +64,7 @@ const Projectcard = ({ projectdetails,key }: {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={cn(
-                "group relative col-span-3  flex flex-col justify-between overflow-hidden rounded-xl",
+                "group relative col-span-3  flex flex-col md:overflow-hidden rounded-xl",
                 // light styles
                 "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
                 // dark styles
@@ -78,11 +78,13 @@ const Projectcard = ({ projectdetails,key }: {
                     background: `radial-gradient(600px circle at ${position.x}px ${position.y}px,rgba(0, 255, 255, 0.1), transparent 40%)`,
                 }}
             />
-            <div className='pl-10 pt-9 grid gap-5  grid-cols-2'>
+            <div className='p-3 md:p-0 md:pl-10 md:pt-9 grid md:gap-5 grid-cols-1  md:grid-cols-2'>
                 <div>
                     <div className=' flex flex-col gap-2'>
+                        <div className='flex flex-row md:flex-col  md:justify-start md:items-start items-center justify-between'>
                         <Image src={logo} alt='pr' className='h-16 w-16'></Image>
-                        <span className=' text-2xl font-bold'>{title}</span>
+                        <span className=' text-3xl md:text-2xl font-bold'>{title}</span>
+                        </div>
                         <p>
                             {discription}
                         </p>
@@ -108,7 +110,7 @@ const Projectcard = ({ projectdetails,key }: {
                         ))}
                     </div>
                 </div>
-                <div>
+                <div className='md:order-last md:mt-0 md:mb-0 -mt-16 mb-8 order-first'>
                     <Image src={image} alt='project' className=' w-full h-full rounded-xl'></Image>
                 </div>
             </div>

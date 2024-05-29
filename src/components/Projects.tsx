@@ -21,7 +21,7 @@ export const Projects = () => {
   return (
     <section ref={ref} id='projects'>
      <Textshine text='Projects'></Textshine>
-     <div className=' flex flex-col gap-10'>
+     <div className=' flex flex-col mt-16 md:mt-0 gap-24 md:gap-10'>
       {
         Projectdata.map((data, key) => (
           <Projectcard key={key} projectdetails={data}></Projectcard>

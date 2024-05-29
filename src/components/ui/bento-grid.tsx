@@ -44,7 +44,7 @@ const BentoCard = ({
     <div>{background}</div>
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
       
-      <Textshine className=" text-2xl text-center	" text={name}>
+      <Textshine className=" text-lg lg:text-2xl text-center	" text={name}>
 
       </Textshine>
     </div>

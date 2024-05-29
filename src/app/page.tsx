@@ -14,7 +14,7 @@ import { RecoilRoot } from "recoil";
 export default function Home() {
   return (
     <RecoilRoot>
-    <main className=" gird grid-cols-1 space-y-9  place-items-center px-56 ">
+    <main className=" gird grid-cols-1 space-y-9  place-items-center px-4 lg:px-56 ">
       <Navbar></Navbar>
       <Herosection></Herosection>
       <About></About>

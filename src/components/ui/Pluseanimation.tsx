@@ -13,7 +13,7 @@ export default function PlusePingAnimation({ className, children }: {
     return (
         <div
             className={cn(' relative',className)}>
-            <motion.span className='absolute flex justify-center items-center left-[50%] top-[50%] z-0 h-80 w-80'>
+            <motion.span className='absolute flex justify-center items-center left-[50%] top-[50%] z-0 md:h-80 h-96 w-96 md:w-80'>
                 <span className='w-12 h-12 p-1 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-2xl shadow-green-500/40'>
                     {children}
                 </span>
@@ -33,7 +33,7 @@ export default function PlusePingAnimation({ className, children }: {
                     repeat: Infinity,
                     delay: 0,
                 }}
-                className='absolute left-[50%] top-[50%] z-0 h-80 w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
+                className='absolute left-[50%] top-[50%] z-0 md:h-80 h-96 w-96 md:w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
             </motion.span>
             <motion.span
                 initial={{
@@ -50,7 +50,7 @@ export default function PlusePingAnimation({ className, children }: {
                     repeat: Infinity,
                     delay: 1,
                 }}
-                className='absolute left-[50%] top-[50%] z-0 h-80 w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
+                className='absolute left-[50%] top-[50%] z-0 md:h-80 h-96 w-96 md:w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
             </motion.span>
             <motion.span
                 initial={{
@@ -67,7 +67,7 @@ export default function PlusePingAnimation({ className, children }: {
                     repeat: Infinity,
                     delay: 2,
                 }}
-                className='absolute left-[50%] top-[50%] z-0 h-80 w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
+                className='absolute left-[50%] top-[50%] z-0 md:h-80 h-96 w-96 md:w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
             </motion.span>
             <motion.span
                 initial={{
@@ -84,7 +84,7 @@ export default function PlusePingAnimation({ className, children }: {
                     repeat: Infinity,
                     delay: 5,
                 }}
-                className='absolute left-[50%] top-[50%] z-0 h-80 w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
+                className='absolute left-[50%] top-[50%] z-0 md:h-80 h-96 w-96 md:w-80 rounded-full border-[1px] border-green-500 bg-gradient-to-br from-green-500/50 to-green-800/20 shadow-xl shadow-green-500/40'>
             </motion.span>
         </div>
     )

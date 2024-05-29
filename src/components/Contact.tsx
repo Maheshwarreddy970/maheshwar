@@ -24,11 +24,11 @@ export default function Contact() {
 
     return (
         <section ref={ref} id="contact"
-            className='relative h-[200px] sm:h-[400px]'
+            className='relative h-[400px]'
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-            <div className='relative h-[calc(100vh+200px)] sm:h-[calc(100vh+400px)] -top-[100vh]'>
-                <div className='h-[200px] sm:h-[400px] p-10 sticky top-[calc(100vh-200px)] sm:top-[calc(100vh-400px)]'>
+            <div className='relative h-[calc(100vh+400px)] sm:h-[calc(100vh+400px)] -top-[100vh]'>
+                <div className='h-[400px] md:p-10 sticky top-[calc(100vh-400px)] '>
                     <div
                         className={cn(
                             "group relative col-span-3 py-9 grid grid-cols-1 justify-items-center overflow-hidden rounded-xl",
@@ -43,7 +43,7 @@ export default function Contact() {
 
                             <div className=' w-full flex items-center gap-4 px-4 py-2 rounded-md border dark:text-black hover:dark:shadow-white  border-neutral-300 bg-white text-neutral-500 text-sm hover:-translate-y-1 transform transition duration-200 hover:shadow-md'>
                                 <MdOutlineEmail className=' h-6 w-6' />
-                                <a className=" text-xl font-semibold " href="mailto:maheshwarreddymutupuri@gmail.com">
+                                <a className=" text-lg md:text-xl font-semibold " href="mailto:maheshwarreddymutupuri@gmail.com">
                                     maheshwarreddymutupuri@gmail.com
                                 </a>
                             </div>
