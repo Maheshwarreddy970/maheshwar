@@ -17,8 +17,8 @@ export default function ThemeToggle() {
                 return setTheme('dark')
             }}
         >
-           <span className=' dark:hidden'><PiMoonThin strokeWidth={3} className=' w-4 h-4 sm:w-5 sm:h-5 text-black/60 hover:text-black' /></span>
-            <span className='hidden dark:block '><FiSun className='w-5 h-5 text-white/60 hover:text-white' /></span>
+           <span className=' dark:hidden'><PiMoonThin strokeWidth={3} className=' w-4 h-4 sm:w-5 sm:h-5 text-gray-800 hover:text-black' /></span>
+            <span className='hidden dark:block '><FiSun className='w-5 h-5 text-gray-300 hover:text-white' /></span>
         </button>
     )
 }

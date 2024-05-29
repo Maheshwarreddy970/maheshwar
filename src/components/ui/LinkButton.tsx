@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-import { GoArrowRight } from "react-icons/go"
 
 const ShineButton = ({name,children}:{name:string,children:ReactNode}) => {
     return (

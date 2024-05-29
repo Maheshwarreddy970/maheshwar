@@ -1,13 +1,4 @@
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { cn } from "@/lib/utils";
+"use client"
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Globe from "@/components/ui/globe";
 import Divider from "./ui/Divider";
@@ -15,8 +6,11 @@ import Textshine from "./ui/Textshine";
 import { Skillsball } from "./ui/Skillsball";
 import { Keypad } from "./ui/Keyboard";
 import PlusePingAnimation from "./ui/Pluseanimation";
-import { MdOutlineFingerprint } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
+import { useRecoilState } from "recoil";
+import { useEffect, useRef } from "react";
+import { Navbartab } from "@/store/atom";
+import { useInView } from "framer-motion";
 
 
 
@@ -61,8 +55,18 @@ const features = [
 ];
 
 export function About() {
+  
+  const ref=useRef(null);
+
+    const isInview=useInView(ref,{amount:0.5})
+    let [activeTab, setActiveTab] = useRecoilState(Navbartab);
+
+    useEffect(()=>{
+        if(isInview)setActiveTab('about');
+    },[isInview,setActiveTab])
+
   return (
-    <section className="">
+    <section id="about" ref={ref} className="">
       <Textshine text="About"></Textshine>
       <BentoGrid>
         {features.map((feature, idx) => (

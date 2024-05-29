@@ -1,16 +1,29 @@
-import React from 'react'
-import { Projects } from './Projects'
+"use client"
+
+import React, { useEffect, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import { MdOutlineEmail } from 'react-icons/md'
-import { GiTheater } from 'react-icons/gi'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { LiaLinkedin } from 'react-icons/lia'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import { SiLeetcode } from 'react-icons/si'
+import { useRecoilState } from 'recoil'
+import { useInView } from 'framer-motion'
+import { Navbartab } from '@/store/atom'
 
 export default function Contact() {
+    
+  const ref=useRef(null);
+
+  const isInview=useInView(ref,{amount:0.5})
+  let [activeTab, setActiveTab] = useRecoilState(Navbartab);
+
+  useEffect(()=>{
+      if(isInview)setActiveTab('contact');
+  },[isInview,setActiveTab])
+
+
     return (
-        <div
+        <section ref={ref} id="contact"
             className='relative h-[200px] sm:h-[400px]'
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
@@ -58,6 +71,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

@@ -1,13 +1,24 @@
 "use client"
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { SkillsData } from '@/lib/data/skills'
 import Divider from './ui/Divider'
 import Textshine from './ui/Textshine'
+import { useInView } from 'framer-motion'
+import { useRecoilState } from 'recoil'
+import { Navbartab } from '@/store/atom'
 
 export function Skills() {
+    const ref=useRef(null);
 
+    const isInview=useInView(ref,{amount:0.5})
+    let [activeTab, setActiveTab] = useRecoilState(Navbartab);
+  
+    useEffect(()=>{
+        if(isInview)setActiveTab('skills');
+    },[isInview,setActiveTab])
+  
     const divRef = useRef<HTMLDivElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -41,7 +52,7 @@ export function Skills() {
         setOpacity(0);
     };
     return (
-        <div >
+        <section id='skills' ref={ref}>
             <Textshine text='Skills'></Textshine>
             <div
                 ref={divRef}
@@ -71,7 +82,7 @@ export function Skills() {
                 }
             </div>
             <Divider />
-        </div>
+        </section>
     )
 }
 

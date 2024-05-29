@@ -1,19 +1,16 @@
 "use client"
 
-import Image from 'next/image'
 import React from 'react'
-import profile from '@/../public/profile.png'
 import { SquigglyUnderline } from './ui/SquigglyUnderline'
 import ThemeToggle from './ui/ThemeToggle'
 
 export default function Navbar() {
   return (
-    <nav className='z-50 mt-10 flex justify-center  items-center h-11'>
-        <div className=' flex justify-between gap-8 items-center sm:gap-28 lg:gap-64'>
+    <nav className='z-50 sticky top-5  border border-white dark:border-white/30 dark:shadow-md dark:border-black dark:shadow-white/30  backdrop-blur-xl shadow-xl  py-1  shadow-black/10 dark:bg-white/20  bg-black/10 h-12 px-9 rounded-xl items-center w-full flex justify-between'>
             <ThemeToggle></ThemeToggle>
+          <div>
             <SquigglyUnderline></SquigglyUnderline>
-            <Image src={profile} alt='profile' className='w-6 h-6 sm:w-9 sm:h-9 rounded-full'></Image>
-        </div>
+          </div>
     </nav>
   )
 }
