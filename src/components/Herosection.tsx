@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import Divider from "./ui/Divider";
 import Image from "next/image";
-import profile from "@/../public/profile.png"
+import profile from "@/../public/profile.jpg"
 import Textshine from "./ui/Textshine";
 import ShineLink from "./ui/ShineLinktag";
 import { FiArrowRight } from "react-icons/fi";
@@ -28,7 +28,7 @@ export const Herosection = () => {
 
 
   return (
-    <section id="home" className="relative flex w-full  items-center justify-center overflow-hidden  bg-background py-10 lg:py-20 lg:px-5">
+    <section id="home" className="relative flex w-full  items-center justify-center overflow-hidden  bg-background py-10 lg:py-20 px-5 max-w-2xl">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.5}

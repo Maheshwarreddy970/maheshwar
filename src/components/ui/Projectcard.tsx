@@ -6,9 +6,10 @@ import ShineButton from './LinkButton';
 import Link from 'next/link';
 import { LuCode2 } from 'react-icons/lu';
 import { FaRegEye } from 'react-icons/fa';
+import { ShineBorder } from './shineborder';
 
 
-const Projectcard = ({ projectdetails,key }: {
+const Projectcard = ({ projectdetails, key }: {
     projectdetails: {
         title: string;
         discription: string;
@@ -18,72 +19,29 @@ const Projectcard = ({ projectdetails,key }: {
         logo: StaticImageData;
         image: StaticImageData;
     },
-    key:number
+    key: number
 }) => {
 
     const { title, discription, technology, sourcecode, preview, logo, image } = projectdetails
     const divRef = useRef<HTMLDivElement>(null);
-    const [isFocused, setIsFocused] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current || isFocused) return;
-
-        const div = divRef.current;
-        const rect = div.getBoundingClientRect();
-
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    };
-
-    const handleFocus = () => {
-        setIsFocused(true);
-        setOpacity(1);
-    };
-
-    const handleBlur = () => {
-        setIsFocused(false);
-        setOpacity(0);
-    };
-
-    const handleMouseEnter = () => {
-        setOpacity(1);
-    };
-
-    const handleMouseLeave = () => {
-        setOpacity(0);
-    };
 
     return (
         <div
             key={key}
             ref={divRef}
-            onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             className={cn(
-                "group relative col-span-3  flex flex-col md:overflow-hidden rounded-xl",
-                // light styles
-                "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-                // dark styles
+                "group relative col-span-3 m-0.5  flex flex-col rounded-xl bg-white",
+                " [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
                 "transform-gpu dark:bg-neutral-950 dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
             )}
         >
-            <div
-                className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
-                style={{
-                    opacity,
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px,rgba(0, 255, 255, 0.1), transparent 40%)`,
-                }}
-            />
-            <div className='p-3 md:p-0 md:pl-10 md:pt-9 grid md:gap-5 grid-cols-1  md:grid-cols-2'>
+            <div className='p-3  grid grid-cols-1'>
                 <div>
                     <div className=' flex flex-col gap-2'>
-                        <div className='flex flex-row md:flex-col  md:justify-start md:items-start items-center justify-between'>
-                        <Image src={logo} alt='pr' className='h-16 w-16'></Image>
-                        <span className=' text-3xl md:text-2xl font-bold'>{title}</span>
+                        <div className='flex flex-row items-center justify-between'>
+                            <Image src={logo} alt='pr' className='h-16 w-16'></Image>
+                            <span className=' text-2xl font-bold'>{title}</span>
                         </div>
                         <p>
                             {discription}
@@ -96,7 +54,7 @@ const Projectcard = ({ projectdetails,key }: {
                             </Link>
                             <Link href={preview} target='_blank'>
                                 <ShineButton name={"Preview"}>
-                                <FaRegEye />
+                                    <FaRegEye />
                                 </ShineButton>
                             </Link>
                         </div>
@@ -110,8 +68,8 @@ const Projectcard = ({ projectdetails,key }: {
                         ))}
                     </div>
                 </div>
-                <div className='md:order-last md:mt-0 md:mb-0 -mt-16 mb-8 order-first'>
-                    <Image src={image} alt='project' className=' w-full h-full rounded-xl'></Image>
+                <div className='-mt-16 border rounded-lg hover:shadow-md mb-8 order-first'>
+                    <Image src={image} alt='project' className='bg-white w-full h-full rounded-xl'></Image>
                 </div>
             </div>
         </div>

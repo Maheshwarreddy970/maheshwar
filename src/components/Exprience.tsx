@@ -8,36 +8,37 @@ import Textshine from "./ui/Textshine";
 import { useInView } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { Navbartab } from "@/store/atom";
+import { ShineBorder } from "./ui/shineborder";
 
 
 export function Exprience() {
-  
-  const ref=useRef(null);
 
-  const isInview=useInView(ref,{amount:0.5})
+  const ref = useRef(null);
+
+  const isInview = useInView(ref, { amount: 0.5 })
   let [activeTab, setActiveTab] = useRecoilState(Navbartab);
 
-  useEffect(()=>{
-      if(isInview)setActiveTab('exprience');
-  },[isInview,setActiveTab])
+  useEffect(() => {
+    if (isInview) setActiveTab('exprience');
+  }, [isInview, setActiveTab])
 
 
   return (
-<section ref={ref} id="exprience">
-    <div className=" grid grid-cols-1 gap-5">
-      <Textshine text="Exprience"></Textshine>
-      <TracingBeam className="px-6 ">
-        {
-          Expriencedata.map((data)=>(
-            <>
-            <Expriencecard expriencedetails={data}></Expriencecard>
-            </>
-          ))
-        }
-      </TracingBeam>
-    </div>
-   <Divider/>
-   </section>
+    <section ref={ref} id="exprience" className="max-w-2xl p-5">
+      <div className=" grid grid-cols-1 gap-5">
+        <Textshine text="Exprience"></Textshine>
+        <TracingBeam className="">
+          {
+            Expriencedata.map((data) => (
+              <ShineBorder >
+                <Expriencecard expriencedetails={data}></Expriencecard>
+              </ShineBorder>
+            ))
+          }
+        </TracingBeam>
+      </div>
+      <Divider />
+    </section>
   );
 }
 
