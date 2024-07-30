@@ -31,7 +31,7 @@ export function Exprience() {
           {
             Expriencedata.map((data) => (
               <ShineBorder >
-                <Expriencecard expriencedetails={data}></Expriencecard>
+                <Expriencecard expriencedatatype={data}></Expriencecard>
               </ShineBorder>
             ))
           }

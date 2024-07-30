@@ -14,10 +14,11 @@ export function About() {
 
   const ref = useRef(null);
 
-  const isInview = useInView(ref, { amount: 0.5 })
+  const isInview = useInView(ref, { amount: 0.2 })
   let [activeTab, setActiveTab] = useRecoilState(Navbartab);
 
   useEffect(() => {
+    console.log("hit about")
     if (isInview) setActiveTab('about');
   }, [isInview, setActiveTab])
 

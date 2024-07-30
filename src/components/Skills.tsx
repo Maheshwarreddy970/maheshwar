@@ -12,10 +12,12 @@ import { ShineBorder } from './ui/shineborder'
 export function Skills() {
     const ref = useRef(null);
 
-    const isInview = useInView(ref, { amount: 0.5 })
+    const isInview = useInView(ref, { amount: 0.8 })
     let [activeTab, setActiveTab] = useRecoilState(Navbartab);
 
     useEffect(() => {
+        console.log("hit skills")
+
         if (isInview) setActiveTab('skills');
     }, [isInview, setActiveTab])
 

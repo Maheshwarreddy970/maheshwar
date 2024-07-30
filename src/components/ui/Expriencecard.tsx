@@ -2,29 +2,26 @@
 
 import { cn } from '@/lib/utils'
 import Image, { StaticImageData } from 'next/image';
-import React, { useRef, useState } from 'react'
-import Textshine from './Textshine';
+import React from 'react'
 
-export default function Expriencecard({ expriencedetails }: {
-    expriencedetails: {
-        headline: string,
-        name: string,
-        period: string,
-        time: string,
-        title: string;
-        discription: string;
-        technology: string[];
+export default function Expriencecard({ expriencedatatype }: {
+    expriencedatatype: {
+        name: string;
+        discription: string[];
         logo: StaticImageData;
-    },
+        time: string;
+        title: string;
+        period: string;
+    }
 }) {
 
-    const { name, time, period, headline, title, discription, technology, logo } = expriencedetails
+    const { name, time, period, title, discription, logo } = expriencedatatype
 
     return (
 
         <div
             className={cn(
-                "group m-0.5 relative col-span-3 px-4 py-2 md:px-8 md:py-4 flex flex-col justify-between overflow-hidden rounded-xl",
+                "group m-0.5 relative p-5 overflow-hidden rounded-xl",
                 // light styles
                 "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
                 // dark styles
@@ -33,32 +30,26 @@ export default function Expriencecard({ expriencedetails }: {
         >
             <div>
                 <div className=' flex flex-col md:flex-row justify-between '>
-                    <div className='flex flex-col gap-1'>
+                    <div className='flex flex-col gap-1 items-start'>
                         <span className='bg-white p-1 size-14 rounded-lg'>
                             <Image src={logo} alt='pr' className='h-full w-full '></Image>
                         </span>
                         <span className=' text-2xl font-bold'>{name}</span>
                         <span className=' font-medium'>{title}</span>
                     </div>
-                    <div className=' flex flex-row md:flex-col justify-between'>
+                    <div className=' flex flex-row md:flex-col  items-start'>
                         <h1 className=' font-semibold text-base md:text-2xl'>{time}</h1>
                         <div className=' font-medium text-base'>{period}</div>
                     </div>
                 </div>
-                <div>
-                    <p>
-                        {discription}
-                    </p>
+                <ul className=''>
+                    {
+                        discription.map((point, index) => (
+                            <li key={index} className=' text-start list-inside'>{point}</li>
+                        ))
+                    }
+                </ul>
 
-                </div>
-                <div className=' flex flex-wrap gap-x-4 pt-3 gap-y-3 pb-4 '>
-                    {technology.map((tech, index) => (
-                        <span key={index} className="inline-flex animate-shine items-center justify-center rounded-lg text-xs border border-neutral-200 dark:border-neutral-800 dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)]  bg-[linear-gradient(110deg,#f0f1f2,45%,#ffffff,55%,#f0f1f2)] bg-[length:200%_100%] px-2 py-[1px] font-medium text-neutral-950 dark:text-neutral-400 transition-colors">
-                            {tech}
-
-                        </span>
-                    ))}
-                </div>
             </div>
         </div>
 
