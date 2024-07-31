@@ -4,15 +4,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRecoilState } from "recoil";
 import { Navbartab } from "@/store/atom";
+import { cn } from "@/lib/utils";
 
-const navigation = ["home", "about", 'projects', "skills", "exprience", "contact"];
 
-export const SquigglyUnderline = () => {
+export const SquigglyUnderline = ({ navigationItems, className }: { navigationItems: string[], className?: string }) => {
   const [selectedLink, setSelectedLink] = useRecoilState(Navbartab);
 
   return (
-    <div className="flex gap-3 sm:gap-9">
-      {navigation.map((item) => {
+    <div className={cn("md:flex gap-3 sm:gap-9 hidden ", className)}>
+      {navigationItems.map((item) => {
         const isSelected = item === selectedLink;
         return (
           <Link

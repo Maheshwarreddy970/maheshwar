@@ -16,8 +16,6 @@ export function Skills() {
     let [activeTab, setActiveTab] = useRecoilState(Navbartab);
 
     useEffect(() => {
-        console.log("hit skills")
-
         if (isInview) setActiveTab('skills');
     }, [isInview, setActiveTab])
 
@@ -25,7 +23,7 @@ export function Skills() {
     return (
         <section id='skills' ref={ref} className='max-w-2xl p-5'>
             <Textshine text='Skills' className='mb-2 md:mb-0'></Textshine>
-            <div className="group relative flex flex-wrap justify-center col-span-3 gap-5 p-2 lg:p-5  md:p-14  overflow-hidden rounded-xl">
+            <div className="group relative flex flex-wrap justify-center col-span-3 gap-2 md:gap-5 p-2 lg:p-5  md:p-14  overflow-hidden rounded-xl">
                 {
                     SkillsData.map((data, key) => (
                         <Skillscard key={key} name={data.skill_name}>

@@ -28,7 +28,7 @@ export const Herosection = () => {
 
 
   return (
-    <section id="home" className="relative flex w-full  items-center justify-center overflow-hidden  bg-background py-10 lg:py-20 px-5 max-w-2xl">
+    <section id="home" className="relative flex w-full mt-20  items-center justify-center overflow-hidden  bg-background py-10 lg:py-20 px-5 max-w-2xl">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.5}
@@ -40,12 +40,11 @@ export const Herosection = () => {
         )}
       />
       <div className=" z-30 flex h-full  justify-between w-full">
-
         <div >
-          <Textshine className="py-0 lg:py-1 text-2xl lg:text-5xl" text="Hi">
+          <Textshine className="py-0 md:py-1 text-2xl md:text-5xl" text="Hi">
           </Textshine>
           <br></br>
-          <Textshine className="py-0 lg:py-1 text-2xl lg:text-5xl" text="i'am Maheshwar">
+          <Textshine className="py-0 md:py-1 text-2xl md:text-5xl" text="i'am Maheshwar">
           </Textshine>
           <br></br>
           <Textshine className="py-0 text-2xl bg-[linear-gradient(110deg,#1978F7,45%,#E8F1FE,55%,#1978F7)] dark:bg-[linear-gradient(110deg,#1978F7,45%,#E8F1FE,55%,#1978F7)]  lg:py-1 lg:text-5xl" text="Developer">
@@ -56,7 +55,7 @@ export const Herosection = () => {
           </div>
         </div>
         <div className="">
-          <Image src={profile} alt="profile" className=" size-20  lg:size-32 rounded-xl shadow-xl"></Image>
+          <Image src={profile} alt="profile" className=" size-20  md:size-32 rounded-xl shadow-xl"></Image>
         </div>
       </div>
       <Divider className="mt-0 absolute bottom-0" ></Divider>
