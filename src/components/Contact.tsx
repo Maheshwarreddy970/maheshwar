@@ -43,7 +43,7 @@ export default function Contact() {
                                     Contact
                                 </h1>
 
-                                <div className=' w-full flex items-center gap-4 px-2  py-2 rounded-md border dark:text-black hover:dark:shadow-white  border-neutral-300 bg-white text-neutral-500 text-sm hover:-translate-y-1 transform transition duration-200 hover:shadow-md'>
+                                <div className=' w-full flex items-center gap-4 px-2  py-2 rounded-md border  hover:dark:shadow-white  border-neutral-300 bg-white dark:bg-black dark:text-white text-neutral-500 text-sm hover:-translate-y-1 transform transition duration-200 hover:shadow-md'>
                                     <MdOutlineEmail className=' h-6 w-6' />
                                     <a className=" text-lg md:text-xl font-semibold " href="mailto:maheshwarreddymutupuri@gmail.com">
                                         maheshwarreddymutupuri@gmail.com

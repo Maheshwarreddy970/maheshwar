@@ -31,7 +31,7 @@ export default function Expriencecard({ expriencedatatype }: {
             <div>
                 <div className=' flex flex-col md:flex-row justify-between '>
                     <div className='flex flex-col gap-1 items-start'>
-                        <span className='bg-white p-1 size-14 rounded-lg'>
+                        <span className='size-14 rounded-lg'>
                             <Image src={logo} alt='pr' className='h-full w-full '></Image>
                         </span>
                         <span className=' text-2xl font-bold'>{name}</span>

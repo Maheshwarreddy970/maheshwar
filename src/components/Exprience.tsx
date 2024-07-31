@@ -29,8 +29,8 @@ export function Exprience() {
         <Textshine text="Exprience"></Textshine>
         <TracingBeam className="">
           {
-            Expriencedata.map((data) => (
-              <ShineBorder >
+            Expriencedata.map((data, i) => (
+              <ShineBorder key={i}>
                 <Expriencecard expriencedatatype={data}></Expriencecard>
               </ShineBorder>
             ))

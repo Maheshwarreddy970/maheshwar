@@ -12,11 +12,11 @@ export const SquigglyUnderline = ({ navigationItems, className }: { navigationIt
 
   return (
     <div className={cn("md:flex gap-3 sm:gap-9 hidden ", className)}>
-      {navigationItems.map((item) => {
+      {navigationItems.map((item, i) => {
         const isSelected = item === selectedLink;
         return (
           <Link
-            key={item}
+            key={i}
             href={`#${item}`}
             className={`relative capitalize text-xs sm:text-sm leading-6 no-underline ${isSelected ? "font-semibold text-blue-600" : "text-gray-800 dark:text-gray-300"
               }`}

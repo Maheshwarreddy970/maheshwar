@@ -25,8 +25,8 @@ export const Projects = () => {
       <Textshine text='Projects'></Textshine>
       <div className=' flex flex-col mt-16 gap-24 '>
         {
-          Projectdata.map((data, key) => (
-            <Projectcard key={key} projectdetails={data}></Projectcard>
+          Projectdata.map((data, i) => (
+            <Projectcard key={i} projectdetails={data}></Projectcard>
           ))
         }
       </div>

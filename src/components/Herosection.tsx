@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import Divider from "./ui/Divider";
 import Image from "next/image";
-import profile from "@/../public/profile.jpg"
 import Textshine from "./ui/Textshine";
 import ShineLink from "./ui/ShineLinktag";
 import { FiArrowRight } from "react-icons/fi";
@@ -55,7 +54,7 @@ export const Herosection = () => {
           </div>
         </div>
         <div className="">
-          <Image src={profile} alt="profile" className=" size-20  md:size-32 rounded-xl shadow-xl"></Image>
+          <img src='/profile.jpg' alt="profile" className=" size-20  md:size-32 rounded-xl shadow-xl"></img>
         </div>
       </div>
       <Divider className="mt-0 absolute bottom-0" ></Divider>
